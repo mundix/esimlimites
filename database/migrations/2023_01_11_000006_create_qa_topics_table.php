@@ -18,4 +18,12 @@ class CreateQaTopicsTable extends Migration
             $table->timestamps();
         });
     }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down()
+    {
+        Schema::dropIfExists('qa_topics');
+    }
 }
