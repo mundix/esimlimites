@@ -5,4 +5,5 @@ Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'Api\V1\Admin', '
 
 Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'Api\V1'], function () {
     Route::resource('applications', App\Http\Controllers\Api\V1\ApplicationController::class)->only(['index', 'store']);
+    Route::resource('clients', App\Http\Controllers\Api\V1\ClientOrderController::class)->only(['index', 'store']);
 });

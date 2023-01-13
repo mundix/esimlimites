@@ -5,9 +5,8 @@ namespace App\Http\Requests;
 use App\Traits\Api\JsonFailValidationTrait;
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreApplicationRequest extends FormRequest
+class StoreClientOrderRequest extends FormRequest
 {
-
     use JsonFailValidationTrait;
 
     /**
@@ -28,16 +27,14 @@ class StoreApplicationRequest extends FormRequest
     public function rules()
     {
         return [
-            'first_name' => ['required'],
-            'last_name' => ['required'],
-            'location' => ['required'],
-            'plan_type' => ['required'],
-            'iccid' => ['required', 'numeric'],
-            'provider' => ['required'],
-            'validity' => ['required'],
-            'status' => ['required', 'numeric'],
-            'payment' => ['required', 'numeric'],
-            'qty' => ['required', 'numeric'],
+            'client_email' => ['required'],
+            'client_name' => ['required'],
+            'client_contact' => ['required'],
+            'client_order_number' => ['required'],
+            'channel' => ['required'],
+            'client_imei' => ['required'],
+            'qr_image' => ['required'],
+            'template' => ['required'],
         ];
     }
 }
