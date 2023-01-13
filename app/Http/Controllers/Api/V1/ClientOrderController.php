@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreClientOrderRequest;
 use App\Http\Requests\UpdateClientOrderRequest;
 use App\Models\ClientOrder;
+use App\Repositories\ClientOrderRepository;
 use Symfony\Component\HttpFoundation\Response;
 
 class ClientOrderController extends Controller
@@ -38,7 +39,7 @@ class ClientOrderController extends Controller
      */
     public function store(StoreClientOrderRequest $request)
     {
-        //
+        return (new ClientOrderRepository())->store($request);
     }
 
     /**
