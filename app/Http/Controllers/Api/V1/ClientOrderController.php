@@ -39,7 +39,7 @@ class ClientOrderController extends Controller
      */
     public function store(StoreClientOrderRequest $request)
     {
-        (new ClientOrderRepository())->store($request->all());
+        return (new ClientOrderRepository())->store($request);
     }
 
     /**
