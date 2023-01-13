@@ -3,14 +3,13 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreApplicationRequest;
-use App\Http\Requests\UpdateApplicationRequest;
-use App\Models\Application;
-use App\Repositories\ApplicationRepository;
-use Illuminate\Database\Eloquent\Model;
+use App\Http\Requests\StoreClientOrderRequest;
+use App\Http\Requests\UpdateClientOrderRequest;
+use App\Models\ClientOrder;
+use App\Repositories\ClientOrderRepository;
 use Symfony\Component\HttpFoundation\Response;
 
-class ApplicationController extends Controller
+class ClientOrderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +18,7 @@ class ApplicationController extends Controller
      */
     public function index()
     {
-        return response()->json(['success' => true, 'application/index'], Response::HTTP_OK);
+        return response()->json(['success' => true, 'client/orders/index'], Response::HTTP_OK);
     }
 
     /**
@@ -35,32 +34,32 @@ class ApplicationController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreApplicationRequest  $request
+     * @param  \App\Http\Requests\StoreClientOrderRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreApplicationRequest $request) : Model
+    public function store(StoreClientOrderRequest $request)
     {
-        return (new ApplicationRepository())->store($request );
+        return (new ClientOrderRepository())->store($request);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Application  $application
+     * @param  \App\Models\ClientOrder  $clientOrder
      * @return \Illuminate\Http\Response
      */
-    public function show(Application $application)
+    public function show(ClientOrder $clientOrder)
     {
-
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Application  $application
+     * @param  \App\Models\ClientOrder  $clientOrder
      * @return \Illuminate\Http\Response
      */
-    public function edit(Application $application)
+    public function edit(ClientOrder $clientOrder)
     {
         //
     }
@@ -68,11 +67,11 @@ class ApplicationController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateApplicationRequest  $request
-     * @param  \App\Models\Application  $application
+     * @param  \App\Http\Requests\UpdateClientOrderRequest  $request
+     * @param  \App\Models\ClientOrder  $clientOrder
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateApplicationRequest $request, Application $application)
+    public function update(UpdateClientOrderRequest $request, ClientOrder $clientOrder)
     {
         //
     }
@@ -80,10 +79,10 @@ class ApplicationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Application  $application
+     * @param  \App\Models\ClientOrder  $clientOrder
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Application $application)
+    public function destroy(ClientOrder $clientOrder)
     {
         //
     }
