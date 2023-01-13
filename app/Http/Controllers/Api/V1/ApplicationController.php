@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreApplicationRequest;
 use App\Http\Requests\UpdateApplicationRequest;
 use App\Models\Application;
+use App\Repositories\ApplicationRepository;
+use Illuminate\Database\Eloquent\Model;
 
 class ApplicationController extends Controller
 {
@@ -35,9 +37,9 @@ class ApplicationController extends Controller
      * @param  \App\Http\Requests\StoreApplicationRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreApplicationRequest $request)
+    public function store(StoreApplicationRequest $request) : Model
     {
-        return $request->all();
+        return (new ApplicationRepository())->store($request );
     }
 
     /**
