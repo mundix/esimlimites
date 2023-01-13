@@ -7,7 +7,7 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class StoreClientOrderRequest extends FormRequest
 {
-    use use JsonFailValidationTrait;
+    use JsonFailValidationTrait;
 
     /**
      * Determine if the user is authorized to make this request.
