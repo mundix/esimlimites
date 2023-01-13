@@ -2,13 +2,14 @@
 
 namespace App\Http\Requests;
 
+use App\Traits\Api\JsonFailValidationTrait;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Contracts\Validation\Validator;
-use Illuminate\Http\Exceptions\HttpResponseException;
-use Symfony\Component\HttpFoundation\Response;
 
 class StoreApplicationRequest extends FormRequest
 {
+
+    use JsonFailValidationTrait;
+
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -38,10 +39,5 @@ class StoreApplicationRequest extends FormRequest
             'payment' => ['required', 'numeric'],
             'qty' => ['required', 'numeric'],
         ];
-    }
-
-    protected function failedValidation(Validator $validator)
-    {
-        throw new HttpResponseException(response($validator->errors(), Response::HTTP_UNPROCESSABLE_ENTITY));
     }
 }
