@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\V1;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreClientOrderRequest;
 use App\Http\Requests\UpdateClientOrderRequest;
+use App\Http\Resources\ClientResource;
 use App\Models\ClientOrder;
 use App\Repositories\ClientOrderRepository;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,7 +19,8 @@ class ClientOrderController extends Controller
      */
     public function index()
     {
-        return response()->json(['success' => true, 'client/orders/index'], Response::HTTP_OK);
+        $clients = ClientOrder::get();
+        return ClientResource::collection($clients);
     }
 
     /**
