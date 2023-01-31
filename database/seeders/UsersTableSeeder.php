@@ -20,5 +20,17 @@ class UsersTableSeeder extends Seeder
         ];
 
         User::insert($users);
+
+        $users = [
+            [
+                'id'             => 2,
+                'name'           => 'ESIM LIMITES',
+                'email'          => 'ecommerce@simlimites.com',
+                'password'       => bcrypt('Gamm@.Simlimites1'),
+                'remember_token' => null,
+            ],
+        ];
+
+        User::insert($users);
     }
 }

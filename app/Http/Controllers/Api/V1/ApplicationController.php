@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\V1;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreApplicationRequest;
 use App\Http\Requests\UpdateApplicationRequest;
+use App\Http\Resources\ApplicationResource;
 use App\Models\Application;
 use App\Repositories\ApplicationRepository;
 use Illuminate\Database\Eloquent\Model;
@@ -19,7 +20,9 @@ class ApplicationController extends Controller
      */
     public function index()
     {
-        return response()->json(['success' => true, 'application/index'], Response::HTTP_OK);
+        $application = Application::get();
+        return ApplicationResource::collection($application);
+//        return response()->json(['success' => true, ''], Response::HTTP_OK);
     }
 
     /**
