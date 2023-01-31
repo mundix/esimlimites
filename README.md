@@ -1,8 +1,17 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank">
+<img src="https://esim.simlimites.com/wp-content/uploads/2022/03/Colores-de-Simlimites-02-1.png" width="400">
+</a></p>
 
 ## About ESIM API
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Installation 
+
+ $ composer install
+
+ $ php artisan migrate --seed
+
+ $ php artisan passport:install
+ 
 
 - [Laravel 9 REST API with Passport Authentication Tutorial](https://www.itsolutionstuff.com/post/laravel-9-rest-api-with-passport-authentication-tutorialexample.html).
 - [Simple, fast routing engine](https://laravel.com/docs/routing).
